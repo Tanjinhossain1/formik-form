@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.inputColor{
+  background-image: linear-gradient( yellow,#ffff00,#575859);
+border-bottom-left-radius: 30px;
+border-bottom-right-radius: 30px;
+  /* background:#ffff00; */
+}
