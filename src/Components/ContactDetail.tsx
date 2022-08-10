@@ -12,9 +12,11 @@ const ContactDetail = (props: any) => {
                 {/* labels  field  */}
                 <div style={{ display: 'flex' }}>
                     <label htmlFor="labels">Guardian Details</label>
-                    <Select onChange={formik.handleChange} name='label' sx={{ width: 200, marginLeft: 6 }}
-                        // value={label}
-                        // onChange={(e) => setLabels(e.target.value)}
+                   <div style={{display:'flex',flexDirection:'column'}}>
+                   <Select
+                          error={formik.touched.label && Boolean(formik.errors.label)}
+                         
+                     onChange={formik.handleChange} name='label' sx={{ width: 200, marginLeft: 6 }}
                         size="small"
                         displayEmpty>
                         <MenuItem defaultValue='father' >
@@ -23,7 +25,8 @@ const ContactDetail = (props: any) => {
                         <MenuItem value='father'>father</MenuItem>
                         <MenuItem value='mother'>mother</MenuItem>
                     </Select>
-
+                        <label htmlFor='' style={{color:'red',marginLeft:50}} >{formik.touched.label && formik.errors.label}</label>
+                   </div>
                     {/* guardian Name field */}
                     <TextField onChange={formik.handleChange} name='guardianName' sx={{ width: 300, marginLeft: 3 }} hiddenLabel placeholder='Enter Guardian Name' size="small"
                     />

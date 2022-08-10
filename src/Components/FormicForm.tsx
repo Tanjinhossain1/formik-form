@@ -20,6 +20,10 @@ let schema = yup.object().shape({
     .required('mobile is Required'),
 
     email: yup.string().email('Enter a valid email').required('Email is Required'),
+
+    label:yup.string().when('guardianName', (guardianName, field) =>
+    guardianName ? field.required() : field
+   ),
 });
 
 const FormicForm = () => {
