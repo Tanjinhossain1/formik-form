@@ -13,7 +13,9 @@ let schema = yup.object().shape({
 
     age: yup.number().required('Age is Required').positive('Type Here Positive Number ').integer("Don't Allow Integer age"),
 
-    mobile: yup.number().required('mobile is Required').positive('Type Here Positive Number ').integer("Don't Allow Integer Number"),
+    mobile: yup.string()
+    .matches( /(\+91|91){1}?-?[0-9]\d{10}/g || /(\+88|88){1}?-?01[1-9]\d{8}/g  ,'Only BD or Indian Number is valid with country code ')
+    .required('mobile is Required'),
 
     email: yup.string().email('Enter a valid email').required('Email is Required'),
 });
@@ -26,11 +28,11 @@ const FormicForm = () => {
         },
         validationSchema: schema,
         onSubmit: (values) => {
-            if (values.mobile.includes('+88') || values.mobile.includes('+91')) {
-                alert('its valid')
-            } else {
-                alert('Give Country Code and allow only India Or Bangladesh')
-            }
+            // if (values.mobile.includes('+88') || values.mobile.includes('+91')) {
+            //     alert('its valid')
+            // } else {
+            //     alert('Give Country Code and allow only India Or Bangladesh')
+            // }
         }
     })
     return (
