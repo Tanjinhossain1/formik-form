@@ -12,11 +12,9 @@ const ContactDetail = (props: any) => {
                 {/* labels  field  */}
                 <div style={{ display: 'flex' }}>
                     <label htmlFor="labels">Guardian Details</label>
-                   <div style={{display:'flex',flexDirection:'column'}}>
-                   <Select
-                          error={formik.touched.label && Boolean(formik.errors.label)}
-                         
-                     onChange={formik.handleChange} name='label' sx={{ width: 200, marginLeft: 6 }}
+
+                    <Select
+                        onChange={formik.handleChange} name='label' sx={{ width: 200, marginLeft: 6 }}
                         size="small"
                         displayEmpty>
                         <MenuItem defaultValue='father' >
@@ -25,8 +23,7 @@ const ContactDetail = (props: any) => {
                         <MenuItem value='father'>father</MenuItem>
                         <MenuItem value='mother'>mother</MenuItem>
                     </Select>
-                        <label htmlFor='' style={{color:'red',marginLeft:50}} >{formik.touched.label && formik.errors.label}</label>
-                   </div>
+
                     {/* guardian Name field */}
                     <TextField onChange={formik.handleChange} name='guardianName' sx={{ width: 300, marginLeft: 3 }} hiddenLabel placeholder='Enter Guardian Name' size="small"
                     />
@@ -36,9 +33,8 @@ const ContactDetail = (props: any) => {
                 <div style={{ display: 'flex' }}>
                     <label htmlFor="email">Email</label>
                     <TextField
-                    error={formik.touched.email && Boolean(formik.errors.email)}
-                    helperText={formik.touched.email && formik.errors.email}
-                     onChange={formik.handleChange} type='email'  name='email' sx={{ width: 320, marginLeft: 3, }} hiddenLabel id="filled-hidden-label-small" placeholder='Enter Email' size="small"
+                       
+                        onChange={formik.handleChange} type='email' name='email' sx={{ width: 320, marginLeft: 3, }} hiddenLabel id="filled-hidden-label-small" placeholder='Enter Email' size="small"
                     />
                 </div>
                 {/* emergency Number field */}
@@ -51,7 +47,7 @@ const ContactDetail = (props: any) => {
 
 
 
-           
+
         </div>
     );
 };

@@ -12,8 +12,7 @@ const PersonalDetail = (props: any) => {
                 <div style={{ display: 'flex' }}>
                     <label htmlFor="name">Name<span style={{ color: 'red' }}>*</span></label>
                     <TextField
-                        error={formik.touched.name && Boolean(formik.errors.name)}
-                        helperText={formik.touched.name && formik.errors.name}
+                       
                         onChange={formik.handleChange} name="name" sx={{ width: 600, marginLeft: 6 }} hiddenLabel placeholder='Enter Name' size="small"
                     />
                 </div>
@@ -22,8 +21,6 @@ const PersonalDetail = (props: any) => {
                 <div style={{ display: 'flex' }}>
                     <label htmlFor="name">Date of Birth or Age<span style={{ color: 'red' }}>*</span></label>
                     <TextField
-                        error={formik.touched.age && Boolean(formik.errors.age)}
-                        helperText={formik.touched.age && formik.errors.age}
                         type='number'
                         onChange={formik.handleChange} name='age' sx={{ width: 400, marginLeft: 6, }} hiddenLabel id="filled-hidden-label-small" placeholder='DD/MM/YY or Age in Years' size="small"
                     />
@@ -56,8 +53,7 @@ const PersonalDetail = (props: any) => {
                     <div>
                         <TextField
 
-                            error={formik.touched.mobile && Boolean(formik.errors.mobile)}
-                            helperText={formik.touched.mobile && formik.errors.mobile}
+                           
                             onChange={formik.handleChange} name='mobile' sx={{ width: 400, marginLeft: 6 }} hiddenLabel placeholder='Enter mobile' size="small"
                         />
                     </div>
