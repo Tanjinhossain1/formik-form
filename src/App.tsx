@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import FormicForm from './Components/FormicForm';
+// import FormicForm from './Components/FormicForm';
+import OpdRegistrationForm from './Components/OpdRegistration/OpdRegistrationForm';
 
 function App() {
   return (
     <div>
-      <FormicForm />
+
+      {/* <FormicForm /> */}
+      <OpdRegistrationForm />
     </div>
   );
 }

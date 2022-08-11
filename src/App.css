@@ -25,3 +25,18 @@
  border: 0;
   background-color: rgb(69 123 59);
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #d9d9d9;
+}

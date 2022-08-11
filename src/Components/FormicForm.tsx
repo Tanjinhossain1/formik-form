@@ -51,6 +51,7 @@ const FormicForm = () => {
     bloodGroup:string;
     nationality:string;
  }
+ 
  const initialValues:FormDetail = {
     name: '', age: '', sex: '', mobile: '', idType: '', govtId: '', label: '', guardianName: '', email: '', emergencyNumber: '', address: '', state: '', city: '', country: '', pinCode: '', occupation: '', religion: '', marital: '', bloodGroup: '', nationality: ''
 }
@@ -60,7 +61,7 @@ const FormicForm = () => {
         onSubmit: (values) => {
         }
     })
-    console.log('formik error', formik.errors.age)
+  
     return (
         <div style={{
             margin: 50
