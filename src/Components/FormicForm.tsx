@@ -29,18 +29,35 @@ let schema = yup.object().shape({
 });
 
 const FormicForm = () => {
-
+ interface FormDetail {
+    name:string;
+    age:string;
+    sex:string;
+    mobile:string;
+    idType:string;
+    govtId:string;
+    label:string;
+    guardianName:string;
+    email:string;
+    emergencyNumber:string;
+    address:string;
+    state:string;
+    city:string;
+    country:string;
+    pinCode:string;
+    occupation:string;
+    religion:string;
+    marital:string;
+    bloodGroup:string;
+    nationality:string;
+ }
+ const initialValues:FormDetail = {
+    name: '', age: '', sex: '', mobile: '', idType: '', govtId: '', label: '', guardianName: '', email: '', emergencyNumber: '', address: '', state: '', city: '', country: '', pinCode: '', occupation: '', religion: '', marital: '', bloodGroup: '', nationality: ''
+}
     const formik = useFormik({
-        initialValues: {
-            name: '', age: '', sex: '', mobile: '', idType: '', govtId: '', label: '', guardianName: '', email: '', emergencyNumber: '', address: '', state: '', city: '', country: '', pinCode: '', occupation: '', religion: '', marital: '', bloodGroup: '', nationality: ''
-        },
+        initialValues: initialValues,
         validationSchema: schema,
         onSubmit: (values) => {
-            // if (values.mobile.includes('+88') || values.mobile.includes('+91')) {
-            //     alert('its valid')
-            // } else {
-            //     alert('Give Country Code and allow only India Or Bangladesh')
-            // }
         }
     })
     console.log('formik error', formik.errors.age)
